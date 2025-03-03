@@ -1,0 +1,28 @@
+:root {
+    /* editor */
+    --editor-background-color: 33, 33, 33;
+    --editor-background: rgb(var(--editor-background-color));
+    --editor-foreground: rgb(204, 204, 204);
+  
+    --separator: #444444;
+    --toolbar: rgb(37, 37, 38);
+    --tab: rgb(45, 45, 45);
+    --selected-tab: var(--editor-background);
+  
+    /* syntax */
+    --type-declaration: #8abeb7;
+    --language-constant: #00bdce;
+    --numeric-constant: #00bdce;
+    --string: #33c192;
+    --regex: #cc6666;
+    --keyword:#00bdce;
+    --function-declaration: #94a9eb;
+    --variable: #eeffff;
+    --comment: #999999;
+    --operator: #ed90a4;
+  
+    /* markdown */
+    --heading: var(--language-constant);
+    --inline-code: var(--string);
+  }
+
