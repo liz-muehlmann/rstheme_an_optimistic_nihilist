@@ -75,15 +75,17 @@
 }
   
 /* highlight matching brackets when selected */
+/* if you want a fill color, uncomment background-color line */
 .ace_marker-layer .ace_bracket {
   margin: -1px 0 0 -1px;
   border: 1px solid var(--comment);
   /* background-color: var(--comment); */
 }
   
-  .ace_marker-layer .ace_active-line {
-    background: #1E1E1E;
-  }
+/* active line color */
+.ace_marker-layer .ace_active-line {
+  background: #1E1E1E;
+}
   
   .ace_marker-layer .ace_selected-word {
     border: 1px solid #61616180;
