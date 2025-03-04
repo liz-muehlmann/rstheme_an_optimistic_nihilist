@@ -104,11 +104,13 @@
   background-color: var(--editor-background-color);
 }
   
-  .ace_marker-layer .ace_active_debug_line {
-    position: absolute;
-    z-index: -1;
-    background-color: #1A1A1A;
-  }
+/* when debugger is set to error inspector */
+/* this highlights the broken line */
+.ace_marker-layer .ace_active_debug_line {
+  position: absolute;
+  z-index: -1;
+  background-color: var(--regex);
+}
   
   .ace_marker-layer .ace_find_line {
     position: absolute;
