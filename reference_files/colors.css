@@ -26,3 +26,12 @@
     --inline-code: var(--string);
   }
 
+:colors {
+  --red: #ed90a4;
+  --orange: #d3a263;
+  --yellow: #99b657;
+  --green: #33c192;
+  --blue: #00bdce;
+  --purple:  #94a9eb;
+  --pink: #dc91db;
+}

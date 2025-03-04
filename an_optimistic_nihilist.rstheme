@@ -5,74 +5,81 @@
 /* but changes many of the colors to match rainbow parens */
 
 :root {
-    /* editor */
-    --editor-background-color: #131313;
-    --separator: #444444;
+  /* editor */
+  --editor-background-color: #131313;
+  --separator: #444444;
 
 
-    /* text color */
-    --comment: #999999
+  /* text color */
+  --comment: #999999;
+  --links: #99b657;
+  --string: #33c192;
+  --type-declaration: #8abeb7;
 }
 
-
 .ace_gutter, /* color and style of the print gutter and line numbers */
-.ace_editor  /* color and style of the code editor and console */
+.ace_editor,  /* color and style of the code editor and console */
+.rstudio-themes-flat .ace_editor_theme, /* environment and files windows */
+.rstudio-themes-flat.ace_editor_theme /* view() background color when opening data */
  {
     background: var(--editor-background-color);
     color: var(--comment);
 }
-  
+
 /* vertical print margin line */
 .ace_print-margin {
   width: 2px;
   background: var(--separator);
 }
 
-/* view() background color when opening data */
-.rstudio-themes-flat.ace_editor_theme {
-  background-color:var(--editor-background-color);
-  color: #B0BEC5;
+/* this should change the flamegraph color under profile  */
+/* but it doesn't. */
+/* leaving it purple to try and discover what this does */
+  .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph {
+    background-color: #B10999;
+    color: #B0BEC5;
+  }
+  
+/* link color (e.g., in the help pane) */
+.rstudio-themes-flat.editor_dark.ace_editor_theme a {
+  color: var(--type-declaration) !important;
 }
   
-  .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph {
-    background-color: #212121;
-    color: #B0BEC5;
-  }
+/* color of "source on save" and outline links */
+.rstudio-themes-flat .gwt-Label {
+  color: var(--comment);
+}
   
-  .rstudio-themes-flat .ace_editor_theme {
-    background-color: #212121;
-    color: #B0BEC5;
-  }
+/* cursor color */
+.ace_cursor {
+  color: var(--string);
+}
+
+/* changes color and style of VIM cursor */
+/* enable VIM keybindings from the global options > */
+/* code > keybindings > vim */
+.normal-mode .ace_cursor {
+  border: 0 !important;
+  background-color: var(--string);
+}
   
-  .rstudio-themes-flat.editor_dark.ace_editor_theme a {
-    color: #FFF !important;
-  }
+/* color of the text selection */
+.ace_marker-layer .ace_selection {
+  background: var(--tab);
+}
   
-  .rstudio-themes-flat .gwt-Label {
-    color: #B0BEC5;
-  }
+/* debugger line */
+/* doesn't change anything, as far as I can tell */
+.ace_marker-layer .ace_step {
+  background: var(--links);
+}
   
-  .ace_cursor {
-    color: #FFCB6B;
-  }
-  
-  .normal-mode .ace_cursor {
-    border: 0 !important;
-    background-color: #FFCB6B;
-  }
-  
-  .ace_marker-layer .ace_selection {
-    background: #61616180;
-  }
-  
-  .ace_marker-layer .ace_step {
-    background: #d9f1b7;
-  }
-  
-  .ace_marker-layer .ace_bracket {
-    margin: -1px 0 0 -1px;
-    border: 1px solid rgba(255, 203, 107, 0.4);
-  }
+/* highlight matching brackets when selected */
+.ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid var(--comment);
+  /* background-color: var(--comment); */
+}
   
   .ace_marker-layer .ace_active-line {
     background: #1E1E1E;
@@ -223,13 +230,7 @@
   .ace_entity.ace_other.ace_attribute-name {
     color: #C792EA;
   }
-  
-  .ace_bracket {
-    margin: 0 !important;
-    border: 0 !important;
-    background-color: rgba(255, 203, 107, 0.4);
-  }
-  
+    
   .ace_console_error {
     background-color: #ff5370;
   }
