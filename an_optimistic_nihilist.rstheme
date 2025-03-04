@@ -35,10 +35,10 @@
 /* this should change the flamegraph color under profile  */
 /* but it doesn't. */
 /* leaving it purple to try and discover what this does */
-  .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph {
-    background-color: #B10999;
-    color: #B0BEC5;
-  }
+.rstudio-themes-flat.ace_editor_theme .profvis-flamegraph {
+  background-color: #B10999;
+  color: #B0BEC5;
+}
   
 /* link color (e.g., in the help pane) */
 .rstudio-themes-flat.editor_dark.ace_editor_theme a {
@@ -65,7 +65,7 @@
   
 /* color of the text selection */
 .ace_marker-layer .ace_selection {
-  background: var(--tab);
+  background:  #1c3c31;
 }
   
 /* debugger line */
@@ -86,16 +86,23 @@
 .ace_marker-layer .ace_active-line {
   background: #1E1E1E;
 }
-  
-  .ace_marker-layer .ace_selected-word {
-    border: 1px solid #61616180;
-  }
-  
-  .ace_marker-layer .ace_foreign_line {
-    position: absolute;
-    z-index: -1;
-    background-color: #1E1E1E;
-  }
+
+/* outline of matching words */
+.ace_marker-layer .ace_selected-word {
+  border: 1px solid var(--string);
+}
+
+/* color and style of the selected word */
+.ace_active-line ~ .ace_selection.ace_start {
+  border: 1px solid var(--string);
+}
+
+/* colors the yaml header of r markdown files */
+.ace_marker-layer .ace_foreign_line {
+  position: absolute;
+  z-index: -1;
+  background-color: var(--editor-background-color);
+}
   
   .ace_marker-layer .ace_active_debug_line {
     position: absolute;
