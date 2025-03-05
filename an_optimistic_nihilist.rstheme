@@ -112,34 +112,38 @@
   background-color: var(--regex);
 }
   
-  .ace_marker-layer .ace_find_line {
-    position: absolute;
-    z-index: -1;
-    background-color: #61616180;
-  }
+/* this changes the color of selected lines when using "find in selection" option */
+.ace_marker-layer .ace_find_line {
+  position: absolute;
+  z-index: -1;
+  background-color: var(--regex);
+}
   
-  .ace_gutter-active-line {
-    background-color: #212121;
-  }
+/* this should change the gutter of the active line but it doesn't */
+/* I checked other themes, no theme has a different gutter color for the */
+/* active line in the editor */
+.ace_gutter-active-line {
+  background-color: var(--regex);
+}
   
-  .ace_fold {
-    background-color: rgba(255, 203, 107, 0.5);
-    border: 1px solid #FFCB6B !important;
-  }
+/* color and style of the code fold icon (after code is folded) */
+.ace_fold {
+  background-color: rgb(0, 189, 206, 0.5);
+  border: 1px solid var(--string) !important;
+}
   
-  .ace_indent-guide {
-    border-right: 1px solid rgba(176, 190, 197, 0.3);
-    margin-right: -1px;
-  }
+/* vertical lines showing indentations */
+/* this is overwritten to use rainbow lines */
+.ace_indent-guide {
+  border-right: 1px solid rgba(176, 190, 197, 0.3);
+  margin-right: -1px;
+}
   
-  .ace_active-line ~ .ace_selection.ace_start {
-    background-color: #1A1A1A;
-  }
-  
-  .ace_keyword {
-    font-style: normal;
-    color: #C792EA;
-  }
+/* keywords like library, for, and in */
+.ace_keyword {
+  font-style: normal;
+  color: var(--keyword);
+}
   
   .ace_keyword.ace_operator {
     font-style: normal;
